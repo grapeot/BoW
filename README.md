@@ -1,6 +1,8 @@
 This is a basic implementation of the Bag of (Visual) Words approach (BoW) for image retrieval.
 It may not be enough for academic research while the state of the arts have already been developed far from BoW, but may be a good start point if you want to build your own indexing for personal photos, etc.
 
+Since this repo uses `git submodule`, you may want to clone it with `git clone --recursive https://github.com/grapeot/BoW`.
+
 ## Compilation
 
 The code relies on OpenCV with non-free module compiled (mainly for SIFT feature).
