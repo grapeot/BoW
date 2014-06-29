@@ -1,0 +1,3 @@
+[submodule "cppsugar"]
+	path = cppsugar
+	url = https://github.com/grapeot/cppsugar

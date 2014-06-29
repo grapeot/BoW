@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-std=c++11 -fopenmp -I.. -O3
+CFLAGS=-std=c++11 -fopenmp -O3
 ADDCFLAGS=
 OPENCV_FLAGS=`pkg-config opencv --cflags` `pkg-config opencv --libs`
 
