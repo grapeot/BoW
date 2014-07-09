@@ -11,7 +11,7 @@ An example bash snippet based on Debian sid is available below.
 If you're eager to learn about all the details, a tutorial about compiling OpenCV with non-free module and also configuring `pkg-config` can be found [here](http://www.ozbotz.org/opencv-installation/). 
 
 ```bash
-sudo apt-get build-essential cmake pkg-config libgtk2.0-dev python-dev python-numpy
+sudo apt-get install build-essential cmake pkg-config libgtk2.0-dev python-dev python-numpy
 sudo apt-get install libpng12-0 libpng12-dev libpng++-dev libpng3 libpnglite-dev zlib1g-dbg zlib1g zlib1g-dev pngtools libjasper-dev libjasper-runtime libjasper1 libjpeg8 libjpeg8-dbg libjpeg62 libjpeg62-dev libjpeg-progs libtiff4 libtiffxx0c2 libtiff-tools libavcodec-dev libavformat-dev libswscale-dev openexr libopenexr6 libopenexr-dev
 wget http://downloads.sourceforge.net/project/opencvlibrary/opencv-unix/2.4.2/OpenCV-2.4.2.tar.bz2
 tar xvjf OpenCV-2.4.2.tar.bz2
