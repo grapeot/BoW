@@ -7,7 +7,29 @@ Since this repo uses `git submodule`, you may want to clone it with `git clone -
 
 The code relies on OpenCV with non-free module compiled (mainly for SIFT feature).
 Configure `pkg-config` for OpenCV and you are good to go.
-A tutorial about compiling OpenCV with non-free module and also configuring `pkg-config` can be found [here](http://www.ozbotz.org/opencv-installation/). (If you only need to build non-free modules, many steps are not necessary)
+An example bash snippet based on Debian sid is available below. 
+If you're eager to learn about all the details, a tutorial about compiling OpenCV with non-free module and also configuring `pkg-config` can be found [here](http://www.ozbotz.org/opencv-installation/). 
+
+```bash
+sudo apt-get build-essential cmake pkg-config libgtk2.0-dev python-dev python-numpy
+sudo apt-get install libpng12-0 libpng12-dev libpng++-dev libpng3 libpnglite-dev zlib1g-dbg zlib1g zlib1g-dev pngtools libjasper-dev libjasper-runtime libjasper1 libjpeg8 libjpeg8-dbg libjpeg62 libjpeg62-dev libjpeg-progs libtiff4 libtiffxx0c2 libtiff-tools libavcodec-dev libavformat-dev libswscale-dev openexr libopenexr6 libopenexr-dev
+wget http://downloads.sourceforge.net/project/opencvlibrary/opencv-unix/2.4.2/OpenCV-2.4.2.tar.bz2
+tar xvjf OpenCV-2.4.2.tar.bz2
+cd OpenCV-2.4.2
+mkdir release
+cd release
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_ZLIB=ON -D BUILD_PYTHON_SUPPORT=ON ..
+make -j 12
+sudo make install
+sudo echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf
+sudo ldconfig -v
+cat << EOF >> ~/.zshrc
+PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
+export PKG_CONFIG_PATH
+EOF
+source ~/.zshrc
+cd ../..
+```
 
 It has been tested under Debian Wheezy, but currently not supporting MacOS.
 It shouldn't been hard to be converted to Windows, but I've never tried that.
